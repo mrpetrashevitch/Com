@@ -45,13 +45,13 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>..\Product\</OutDir>
+    <OutDir>..\WPF\Product\</OutDir>
     <IntDir>.\temp\</IntDir>
     <TargetName>core</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>..\Product\</OutDir>
+    <OutDir>..\WPF\Product\</OutDir>
     <IntDir>.\temp\</IntDir>
     <TargetName>core</TargetName>
   </PropertyGroup>
