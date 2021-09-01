@@ -68,8 +68,7 @@ namespace WPF.ViewModel
         private bool CanGetSumCommandExecute(object p) => true;
         private async void OnGetSumCommandExecuted(object p)
         {
-            //Task.Run(new Action(() => { Result = App.Core.Sum(Num1, Num2, d => Progress = d); }));
-            Result = await Task.Run(() => App.Core.Sum(Num1, Num2, d => Progress = d)).ConfigureAwait(true);
+            Result = await Task.Run(() => App.Core.Sum(Num1, Num2, d => Progress = d)).ConfigureAwait(false);
         }
         #endregion
 
