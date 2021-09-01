@@ -15,6 +15,7 @@ namespace core
 		ULONG __stdcall Release() override;
 
 		// interface ICore
+		int __stdcall sum(int x, int y) override;
 		int __stdcall sum(int x, int y, void(__stdcall* progress_func)(double progress)) override;
 	};
 }

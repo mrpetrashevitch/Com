@@ -11,11 +11,11 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
-    <OutputPath>C:\Users\ANDROID10\source\repos\Com\Product\</OutputPath>
+    <OutputPath>Product\</OutputPath>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
-    <OutputPath>C:\Users\ANDROID10\source\repos\Com\Product\</OutputPath>
+    <OutputPath>Product\</OutputPath>
   </PropertyGroup>
 
   <ItemGroup>

@@ -9,6 +9,9 @@ namespace core
 		{
 			*ppObj = this;
 			AddRef();
+
+			// ѕри уничтожении класса core, clr выполн€ет лишний вызов высвобождени€ ресурсов core::Release(). 
+			// ≈сли не добавить лишнюю ссылку, то произойдет исключение в 36 строке при попытке удалить уже не существующий класс.
 			AddRef();
 			return S_OK;
 		}
@@ -32,6 +35,11 @@ namespace core
 		if (nRefCount == 0)
 			delete this;
 		return nRefCount;
+	}
+
+	int __stdcall core::sum(int x, int y)
+	{
+		return sum(x, y, nullptr);
 	}
 
 	int __stdcall core::sum(int x, int y, void(__stdcall* progress_func)(double progress))

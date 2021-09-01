@@ -9,6 +9,9 @@ namespace WPF.Model
     public interface ICore
     {
         [PreserveSig]
+        int sum(int x, int y);
+
+        [PreserveSig]
         int sum(int x, int y, IntPtr progress_func);
     }
 }

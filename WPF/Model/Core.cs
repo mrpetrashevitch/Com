@@ -25,7 +25,7 @@ namespace WPF.Model
         public int Sum(int x, int y, CallBackProgress progress)
         {
             var ptr = Marshal.GetFunctionPointerForDelegate(progress);
-            return ICore.sum(x,y, ptr);
+            return ICore.sum(x,y, ptr); // Вызов конструктора с 3 параметрами. Но clr всегда вызывает перегрузку метода, который определен первым в интерфейсе.
         }
     }
 }
