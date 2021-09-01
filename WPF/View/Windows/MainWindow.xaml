@@ -1,0 +1,44 @@
+﻿<Window x:Class="WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" mc:Ignorable="d"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF"
+        xmlns:vm="clr-namespace:WPF.ViewModel"
+        Height="100" Width="400"
+        WindowStartupLocation="CenterScreen"
+        Title="{Binding Title}"
+        DataContext="{Binding MainWindowViewModel, Source={StaticResource Locator}}">
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="Файл">
+                <MenuItem Header="Выход"/>
+                <Separator/>
+                <MenuItem Header="Сумма" Command="{Binding GetSumCommand}"/>
+            </MenuItem>
+        </Menu>
+        <Grid DockPanel.Dock="Bottom">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <GroupBox Grid.Column="0" Header="Число 1">
+                <TextBox Text="{Binding Num1, UpdateSourceTrigger=PropertyChanged}"/>
+            </GroupBox>
+            <GroupBox Grid.Column="1" Header="Число 2">
+                <TextBox Text="{Binding Num2, UpdateSourceTrigger=PropertyChanged}"/>
+            </GroupBox>
+            <GroupBox Grid.Column="2" Header="Результат">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" Text="{Binding Result}" HorizontalAlignment="Center"/>
+                    <ProgressBar Grid.Row="1" Value="{Binding Progress}" Maximum="1"/>
+                </Grid>
+            </GroupBox>
+        </Grid>
+    </DockPanel>
+</Window>
